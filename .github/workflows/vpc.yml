@@ -1,5 +1,6 @@
 name: Aws vpc 
-on: push
+on: 
+    [push, workflow_dispatch]
 jobs:
     Inititalize:
         runs-on: ubuntu-latest
