@@ -1,11 +1,11 @@
-name: Aws vpc 
+name: AWS RDS MYSQL DB
 on: 
     [push, workflow_dispatch]
 permissions: 
    id-token: write
    contents: read
 jobs:
-    Inititalize:
+    RDS_Initialize:
         runs-on: ubuntu-latest
         steps:
 

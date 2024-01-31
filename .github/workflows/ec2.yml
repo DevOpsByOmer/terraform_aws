@@ -1,11 +1,11 @@
-name: Aws vpc 
+name: Aws EC2
 on: 
     [push, workflow_dispatch]
 permissions: 
    id-token: write
    contents: read
 jobs:
-    Inititalize:
+    EC2_Initialize:
         runs-on: ubuntu-latest
         steps:
 
