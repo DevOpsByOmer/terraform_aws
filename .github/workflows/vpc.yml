@@ -7,9 +7,7 @@ jobs:
         steps:
 
             - uses: actions/checkout@v4
-              with: 
-                path: ./AWS_VPC
-
+             
             - uses: hashicorp/setup-terraform@v3
               with:
                   terraform_version: "1.1.7"
