@@ -1,18 +1,21 @@
 module "rds" {
-  source               = "terraform-aws-modules/rds/aws"
-  version              = "6.3.1"
-  engine               = data.aws_db_instance.rds_mysql.engine
-  engine_version       = data.aws_db_instance.rds_mysql.engine_version
-  allocated_storage    = data.aws_db_instance.rds_mysql.allocated_storage
-  instance_class       = data.aws_db_instance.rds_mysql.db_instance_class
-  parameter_group_name = "default.mysql5.7"
-  storage_type         = data.aws_db_instance.rds_mysql.storage_type
-  identifier           = "mydb"
-  username             = "admin"
-  password             = "password"
-  skip_final_snapshot  = true
+  source  = "terraform-aws-modules/rds/aws"
+  version = "6.3.1"
+
+  family                    = "mysql5.7"
+  instance_class            = "db.t2.micro"
+  engine                    = "mysql"
+  engine_version            = "5.7"
+  major_engine_version      = "15.00"
+  storage_type              = "gp2"
+  allocated_storage         = 20
+  publicly_accessible       = false
+  create_db_parameter_group = false
+  identifier                = "mydb"
+  username                  = "admin"
+  password                  = "password"
+  skip_final_snapshot       = true
   tags = {
     name = "MYSQL_DB_TF"
   }
-
 }
