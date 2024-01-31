@@ -1,6 +1,9 @@
 name: Aws vpc 
 on: 
     [push, workflow_dispatch]
+permissions: 
+   id-token: write
+   contents: read
 jobs:
     Inititalize:
         runs-on: ubuntu-latest
@@ -15,10 +18,10 @@ jobs:
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v4
               with:
-                aws-access-key-id: ${{ secrets.AWS_ACCESS_ID }}
-                aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-                role-to-assume: arn:aws:iam::348420498265:role/Github_actions
+                role-to-assume: arn:aws:iam::348420498265:role/github_action_test
+                role-session-name: sampleroesession
                 aws-region: us-east-1
+
             - name: dir
               run: ls && pwd
 
