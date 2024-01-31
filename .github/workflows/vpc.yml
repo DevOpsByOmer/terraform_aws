@@ -29,7 +29,11 @@ jobs:
               run: terraform version
 
             - name: initialize the dir
-              run: cd AWS_VPC && terraform init && terraform plan
+              run: cd AWS_VPC && terraform init
+
+            - name: initialize the dir
+              run: cd AWS_VPC && terraform plan
+              
 
               
 
