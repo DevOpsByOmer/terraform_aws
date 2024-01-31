@@ -17,6 +17,7 @@ jobs:
               with:
                 aws-access-key-id: ${{ secrets.AWS_ACCESS_ID }}
                 aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+                role-to-assume: arn:aws:iam::348420498265:role/Github_actions
                 aws-region: us-east-1
             - name: dir
               run: ls && pwd
