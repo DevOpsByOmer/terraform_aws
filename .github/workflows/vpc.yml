@@ -13,12 +13,17 @@ jobs:
             - uses: hashicorp/setup-terraform@v3
               with:
                   terraform_version: "1.1.7"
-
+            - name: Configure AWS Credentials
+              uses: aws-actions/configure-aws-credentials@v4
+              with:
+                    role-to-assume: arn:aws:iam::348420498265:role/Github_actions
+                    aws-region: us-east-2
             - name: version check
               run: terraform version
 
             - name: initialize the dir
-              run: ls && pwd && terraform init
+              run: ls && pwd && terraform init && terraform plan
 
+              
 
     
