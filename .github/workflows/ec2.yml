@@ -20,9 +20,9 @@ jobs:
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v4
               with:
-                role-to-assume: "{{secrets.AWS_IAM_ROLE}}"
+                role-to-assume: "${{secrets.AWS_IAM_ROLE}}"
                 role-session-name: sampleroesession
-                aws-region: us-east-1
+                aws-region: "${{secrets.AWS_IAM_ROLE}}"
 
             - name: version check
               run: terraform version
