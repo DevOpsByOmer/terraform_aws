@@ -22,7 +22,7 @@ jobs:
               with:
                 role-to-assume: "${{secrets.AWS_IAM_ROLE}}"
                 role-session-name: sampleroesession
-                aws-region: "${{secrets.AWS_IAM_ROLE}}"
+                aws-region: "${{secrets.AWS_REGION}}"
 
             - name: version check
               run: terraform version
