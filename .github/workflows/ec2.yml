@@ -28,7 +28,7 @@ jobs:
               run: terraform version
 
             - name: initialize the dir
-              run: terraform init
+              run: ls -la &&  cd EC2 && terraform init
 
             - name: initialize the dir
               run: terraform plan
