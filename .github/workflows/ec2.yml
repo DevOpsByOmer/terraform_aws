@@ -28,10 +28,10 @@ jobs:
               run: terraform version
 
             - name: initialize the dir
-              run: cd EC2 && terraform init
+              run: terraform init
 
             - name: initialize the dir
-              run: cd EC2 && terraform plan
+              run: terraform plan
               
 
               
